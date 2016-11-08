@@ -44,7 +44,7 @@ namespace MineSweeperBoardGenerator
                     mineRow = randomNumberGenerated.Next(size * 100000) % size;
                     mineColumn = randomNumberGenerated.Next(size * 100000) % size;
                 }
-                while (board[mineRow, mineColumn] == 9);
+                while (board[mineRow, mineColumn] >= 9);
 
                 board[mineRow, mineColumn] = 9;
 
@@ -75,11 +75,11 @@ namespace MineSweeperBoardGenerator
             {
                 for (var j = 0; j< size; j++)
                 {
-                    if (i == rowClicked && j == columnClicked)
-                    {
-                        Console.Write("I");
-                    }
-                    else if (board[i, j] == 9 )
+                    //if (i == rowClicked && j == columnClicked)
+                    //{
+                    //    Console.Write("I");
+                    //}
+                    if (board[i, j] == 9 )
                     {
                         Console.Write("M");    
                     }
